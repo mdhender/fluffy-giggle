@@ -1,0 +1,13 @@
+digraph LinkedDiagram {
+    node [shape=record, style=filled, fillcolor=white];
+
+    // Define nodes with record shapes
+    S [label="<f0> | S | <f1> | <f2>"];
+    empty_nil [label="empty | {nil | <f3>}"];
+
+    // Define edges
+    S:f0 -> S:f2 [label="", arrowhead=normal]; // Loop arrow back to the right side of S
+    S:f1 -> empty_nil [arrowhead=normal]; // Arrow down to empty_nil
+    empty_nil:f3 -> null [label=""];
+}
+

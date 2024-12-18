@@ -1,0 +1,13 @@
+digraph NodeDiagram {
+    node [shape=record, style=solid];
+
+    // Define nodes with vertically and horizontally split fields
+    S [label="{ S } | { <alt> | <suc> } }"];
+    empty [label="{ empty | { nil | <suc> } }"];
+
+    // Define edges
+    S:suc -> S [dir=back, arrowtail=normal]; // Loop back within S
+    S:alt -> empty [arrowhead=normal];       // Downward arrow to empty
+    empty:suc -> next [label="next", style=invis]; // Rightward exit arrow from empty
+}
+
